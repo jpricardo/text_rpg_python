@@ -1,16 +1,17 @@
 #
 
 import classes as cl
+import menu as menu
 
-
+functions = {'Main menu': menu.mainmenu, 'Exit': menu.exit}
 
 teste = cl.NPC('Testinho', 100)
 teste.set_friendly(False)
-print(teste.__dict__)
+
 
 testinho = cl.Enemy('Doente', 50)
 testinho.set_drop(drop=['espada', 'bosta'], drop_rate=[0.01, 0.5])
-print(testinho.__dict__)
+
 
 def create_character():
 	name = input('Nome: ')
@@ -20,8 +21,7 @@ def create_character():
 	return c
 
 
+def main():
+	menu.show_menu(functions)
 
-
-
-test = create_character()
-print(test.__dict__)
+main()
